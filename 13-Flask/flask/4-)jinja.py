@@ -31,8 +31,10 @@ def about():
 
 
 
-## Variable Rule
-@app.route('/success/<int:score>')
+## Variable Rule -Variable rules in Flask restrict the type of parameter that can be passed in the URL
+## by defauly the parameter in url is of str type  
+##attempt to concatenate it directly with a string, you will encounter a type error. To resolve this, ensure proper typecasting or use string formatting.in concatenation
+@app.route('/success/<int:score>') ##ensures only integer values are accepted.
 def success(score):
     res=""
     if score>=50:
@@ -86,4 +88,5 @@ def submit():
 
 if __name__=="__main__":
     app.run(debug=True)
+
 
